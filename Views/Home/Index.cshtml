@@ -30,7 +30,7 @@
                     <td>@contact.Email</td>
                     <td>@contact.Phone</td>
                     <td>@contact.Category.CategoryName</td>
-                    <td>@contact.Organization</td>
+                    <td>@(contact.Organization != null ? contact.Organization : "")</td>
                     <td>
                         <a asp-controller="Contact" asp-action="Edit"
                            asp-route-id="@contact.ContactId"
