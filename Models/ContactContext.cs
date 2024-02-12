@@ -33,7 +33,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 FirstName = "Test FirstName",
                 LastName = "Test LastName",
                 Email = "Test Email",
-                Phone = 1111111,
+                Phone = "1231231233",
                 Organization = "Test Organization",
                 CategoryId = 1
             },
@@ -43,7 +43,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 FirstName = "Test FirstName",
                 LastName = "Test LastName",
                 Email = "Test Email",
-                Phone = 2222222,
+                Phone = "2342342344",
                 Organization = "Test Organization",
                 CategoryId = 2
             },
@@ -53,7 +53,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 FirstName = "Test FirstName",
                 LastName = "Test LastName",
                 Email = "Test Email",
-                Phone = 3333333,
+                Phone = "3453453455",
                 Organization = "Test Organization",
                 CategoryId = 3
             });

@@ -8,7 +8,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
         public string Organization { get; set; }
         public int CategoryId {  get; set; }
         public Category? Category { get; set; }

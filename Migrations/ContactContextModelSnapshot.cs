@@ -102,8 +102,9 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ContactId");
 
@@ -120,7 +121,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
                             Organization = "Test Organization",
-                            Phone = 1111111
+                            Phone = "1231231233"
                         },
                         new
                         {
@@ -130,7 +131,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
                             Organization = "Test Organization",
-                            Phone = 2222222
+                            Phone = "2342342344"
                         },
                         new
                         {
@@ -140,7 +141,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
                             Organization = "Test Organization",
-                            Phone = 3333333
+                            Phone = "3453453455"
                         });
                 });
 

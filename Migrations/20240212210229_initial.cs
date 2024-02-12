@@ -7,7 +7,7 @@
 namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<int>(type: "int", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Organization = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -68,9 +68,9 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                 columns: new[] { "ContactId", "CategoryId", "Email", "FirstName", "LastName", "Organization", "Phone" },
                 values: new object[,]
                 {
-                    { 1, 1, "Test Email", "Test FirstName", "Test LastName", "Test Organization", 1111111 },
-                    { 2, 2, "Test Email", "Test FirstName", "Test LastName", "Test Organization", 2222222 },
-                    { 3, 3, "Test Email", "Test FirstName", "Test LastName", "Test Organization", 3333333 }
+                    { 1, 1, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "1231231233" },
+                    { 2, 2, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "2342342344" },
+                    { 3, 3, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "3453453455" }
                 });
 
             migrationBuilder.CreateIndex(
