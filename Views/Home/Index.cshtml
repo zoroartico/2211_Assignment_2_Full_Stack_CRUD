@@ -16,28 +16,31 @@
     <tbody>
         @foreach (var contact in Model)
         {
-            <tr>
-                <td>@contact.FirstName</td>
-                <td>@contact.LastName</td>
-                <td>@contact.Email</td>
-                <td>@contact.Phone</td>
-                <td>@contact.Category.CategoryName</td>
-                <td>@contact.Organization</td>
-                <td>
-                    <a asp-controller="Contact" asp-action="Edit"
-                       asp-route-id="@contact.ContactId"
-                       asp-route-slug="@contact.Slug"
-                       class="btn btn-outline-secondary">
-                        Edit
-                    </a>
-                    <a asp-controller="Contact" asp-action="Delete"
-                       asp-route-id="@contact.ContactId"
-                       asp-route-slug="@contact.Slug"
-                       class="btn btn-outline-danger">
-                        Delete
-                    </a>
-                </td>
-            </tr>
+            if (contact != null)
+            {
+                <tr>
+                    <td>@contact.FirstName</td>
+                    <td>@contact.LastName</td>
+                    <td>@contact.Email</td>
+                    <td>@contact.Phone</td>
+                    <td>@contact.Category.CategoryName</td>
+                    <td>@contact.Organization</td>
+                    <td>
+                        <a asp-controller="Contact" asp-action="Edit"
+                           asp-route-id="@contact.ContactId"
+                           asp-route-slug="@contact.Slug"
+                           class="btn btn-outline-secondary">
+                            Edit
+                        </a>
+                        <a asp-controller="Contact" asp-action="Delete"
+                           asp-route-id="@contact.ContactId"
+                           asp-route-slug="@contact.Slug"
+                           class="btn btn-outline-danger">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
