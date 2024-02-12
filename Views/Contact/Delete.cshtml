@@ -3,7 +3,7 @@
     ViewBag.Title = "Delete Contact";
 }
 <h2>Confirm Deletion</h2>
-<h3>@Model.FirstName</h3>
+<h3>@Model.FirstName @Model.LastName?</h3>
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="ContactId" />
     <button type="submit" class="btn btn-danger">

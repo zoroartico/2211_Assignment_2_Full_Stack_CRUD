@@ -7,9 +7,10 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Rating</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Category</th>
+            <th>Organization</th>
             <th><a asp-controller="Contact" asp-action="Add" class="btn btn-outline-success">Add New Contact</a></th>
         </tr>
     </thead>
@@ -19,8 +20,7 @@
             if (contact != null)
             {
                 <tr>
-                    <td>@contact.FirstName</td>
-                    <td>@contact.LastName</td>
+                    <td>@contact.FirstName @contact.LastName</td>
                     <td>@contact.Email</td>
                     <td>@contact.Phone</td>
                     <td>@contact.Category.CategoryName</td>
