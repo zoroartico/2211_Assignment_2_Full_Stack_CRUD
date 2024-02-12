@@ -10,8 +10,6 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Category</th>
-            <th>Organization</th>
-            <th><a asp-controller="Contact" asp-action="Add" class="btn btn-outline-success">Add New Contact</a></th>
         </tr>
     </thead>
     <tbody>
@@ -30,23 +28,9 @@
                     <td>@contact.Email</td>
                     <td>@contact.Phone</td>
                     <td>@contact.Category.CategoryName</td>
-                    <td>@(contact.Organization != null ? contact.Organization : "")</td>
-                    <td>
-                        <a asp-controller="Contact" asp-action="Edit"
-                           asp-route-id="@contact.ContactId"
-                           asp-route-slug="@contact.Slug.Replace(" ","-")"
-                           class="btn btn-outline-secondary">
-                            Edit
-                        </a>
-                        <a asp-controller="Contact" asp-action="Delete"
-                           asp-route-id="@contact.ContactId"
-                           asp-route-slug="@contact.Slug.Replace(" ","-")"
-                           class="btn btn-outline-danger">
-                            Delete
-                        </a>
-                    </td>
                 </tr>
             }
         }
     </tbody>
+    <a asp-controller="Contact" asp-action="Add" class="btn btn-outline-success">Add New Contact</a>
 </table>

@@ -17,14 +17,14 @@
             {
                 //Due to time constraint, less elegant solution to inproper display of categoryName
                 if(propertyName == "Category"){
-                    <dt class="col-sm-2 border-top">
+                    <dt class="col-sm-2 border">
                         @Html.DisplayName(propertyName)
                     </dt>
                     <dd class="col-sm-10 border-top">
                         @Html.DisplayFor(model => model.Category.CategoryName)
                     </dd>
                 } else {
-                    <dt class="col-sm-2 border-top">
+                    <dt class="col-sm-2 border">
                         @Html.DisplayName(propertyName)
                     </dt>
                     <dd class = "col-sm-10 border-top">
@@ -37,6 +37,20 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ContactId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Contact" asp-action="Edit"
+       asp-route-id="@Model.ContactId"
+       asp-route-slug="@Model.Slug.Replace(" ","-")"
+       class="btn btn-outline-secondary">
+        Edit
+    </a>
+    <a asp-controller="Contact" asp-action="Delete"
+       asp-route-id="@Model.ContactId"
+       asp-route-slug="@Model.Slug.Replace(" ","-")"
+       class="btn btn-outline-danger">
+        Delete
+    </a>
+    <a asp-controller="Home" asp-action="Index"
+       class="btn btn-outline-primary">
+        Home
+    </a>
 </div>
