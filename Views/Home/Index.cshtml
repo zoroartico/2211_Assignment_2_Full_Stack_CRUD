@@ -20,7 +20,13 @@
             if (contact != null)
             {
                 <tr>
-                    <td>@contact.FirstName @contact.LastName</td>
+                    <td>
+                        <a asp-controller="Contact" asp-action="Details"
+                           asp-route-id="@contact.ContactId"
+                           asp-route-slug="@contact.Slug.Replace(" ","-")">
+                           @contact.FirstName @contact.LastName
+                        </a>
+                    </td>
                     <td>@contact.Email</td>
                     <td>@contact.Phone</td>
                     <td>@contact.Category.CategoryName</td>
@@ -28,13 +34,13 @@
                     <td>
                         <a asp-controller="Contact" asp-action="Edit"
                            asp-route-id="@contact.ContactId"
-                           asp-route-slug="@contact.Slug"
+                           asp-route-slug="@contact.Slug.Replace(" ","-")"
                            class="btn btn-outline-secondary">
                             Edit
                         </a>
                         <a asp-controller="Contact" asp-action="Delete"
                            asp-route-id="@contact.ContactId"
-                           asp-route-slug="@contact.Slug"
+                           asp-route-slug="@contact.Slug.Replace(" ","-")"
                            class="btn btn-outline-danger">
                             Delete
                         </a>
