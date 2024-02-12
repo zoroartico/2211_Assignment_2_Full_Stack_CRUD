@@ -1,0 +1,48 @@
+﻿@model Contact
+@{
+    string fname = ViewBag.Action + " Contact";
+    ViewBag.FirstName = fname;
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All"
+         class="text-danger">
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control">
+    </div><div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId" class="form-control">
+            <option value="">select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">
+                    @c.CategoryName
+                </option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Organization">Organization</label>
+        <input asp-for="Organization" class="form-control">
+    </div>
+    <input type="hidden" asp-for="ContactId" />
+    <button type="submit" class="btn btn-success">
+        @ViewBag.Action
+    </button>
+    <a asp-controller="Home" asp-action="Index"
+       class="btn btn-danger">Cancel</a>
+</form>
