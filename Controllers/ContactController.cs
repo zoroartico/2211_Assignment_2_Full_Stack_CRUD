@@ -10,7 +10,6 @@ namespace ContactList.Controllers
         {
             context = ctx;
         }
-
         [HttpGet]
         public IActionResult Add()
         {
@@ -21,6 +20,18 @@ namespace ContactList.Controllers
                 .OrderBy(c => c.CategoryName)
                 .ToList();
             return View("Edit", new Contact());
+        }
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            ViewBag.Action = "Details";
+            ViewBag.Categories =
+                context
+                .Categories
+                .OrderBy(c => c.CategoryName)
+                .ToList();
+            var contact = context.Contacts.Find(id);
+            return View(contact);
         }
         [HttpGet]
         public IActionResult Edit(int id)
