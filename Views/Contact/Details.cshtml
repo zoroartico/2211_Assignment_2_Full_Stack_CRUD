@@ -5,18 +5,34 @@
 }
 <h2>@ViewBag.Title</h2>
 <div>
-    <h4>Contact</h4>
+    <h2>Contact Details</h2>
     <hr />
     <dl class="row border" >
         <!--Iterates through properties to dynamically create table display, much cleaner look-->
         @foreach (var property in typeof(Contact).GetProperties())
         {
-            <dt class="col-sm-2 border-top">
-                @Html.DisplayName(property.Name)
-            </dt>
-            <dd class = "col-sm-10 border-top">
-                @property.GetValue(Model)
-            </dd>
+            var propertyName = property.Name;
+            //Excluding properties that contain "Id" or "Slug"
+            if (!propertyName.Contains("Id") && !propertyName.Contains("Slug"))
+            {
+                //Due to time constraint, less elegant solution to inproper display of categoryName
+                if(propertyName == "Category"){
+                    <dt class="col-sm-2 border-top">
+                        @Html.DisplayName(propertyName)
+                    </dt>
+                    <dd class="col-sm-10 border-top">
+                        @Html.DisplayFor(model => model.Category.CategoryName)
+                    </dd>
+                } else {
+                    <dt class="col-sm-2 border-top">
+                        @Html.DisplayName(propertyName)
+                    </dt>
+                    <dd class = "col-sm-10 border-top">
+                        @property.GetValue(Model)
+                    </dd>
+                }
+                
+            }
         }
     </dl>
 </div>
