@@ -11,9 +11,11 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         public string LastName { get; set; }
 
         //uses regex to check for characters before and after an @, then checks for period and 2 or more chars.
-        [RegularExpression(@"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$",ErrorMessage = "The Email field is invalid.")]
+        [RegularExpression(@"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$",ErrorMessage = "The Email field is invalid. Correct format is example@email.com")]
         public string Email { get; set; }
 
+        //uses regex to enforce consistency
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "The Phone field is invalid. Must be 10 digits")]
         public string Phone { get; set; }
         public string? Organization { get; set; }
         public int CategoryId {  get; set; }
