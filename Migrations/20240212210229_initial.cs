@@ -65,12 +65,12 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "CategoryId", "Email", "FirstName", "LastName", "Organization", "Phone" },
+                columns: new[] { "ContactId", "CategoryId", "Email", "FirstName", "LastName", "Business", "Phone" },
                 values: new object[,]
                 {
-                    { 1, 1, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "1231231233" },
-                    { 2, 2, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "2342342344" },
-                    { 3, 3, "Test Email", "Test FirstName", "Test LastName", "Test Organization", "3453453455" }
+                    { 1, 1, "Test Email", "Test FirstName", "Test LastName", "Test Business", "1231231233" },
+                    { 2, 2, "Test Email", "Test FirstName", "Test LastName", "Test Business", "2342342344" },
+                    { 3, 3, "Test Email", "Test FirstName", "Test LastName", "Test Business", "3453453455" }
                 });
 
             migrationBuilder.CreateIndex(

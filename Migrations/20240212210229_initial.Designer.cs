@@ -101,7 +101,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Organization")
+                    b.Property<string>("Business")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -123,7 +123,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
+                            Organization = "Test Business",
                             Phone = "1231231233"
                         },
                         new
@@ -133,7 +133,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
+                            Organization = "Test Business",
                             Phone = "2342342344"
                         },
                         new
@@ -143,7 +143,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
+                            Organization = "Test Business",
                             Phone = "3453453455"
                         });
                 });

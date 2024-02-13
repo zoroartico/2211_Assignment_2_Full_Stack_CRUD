@@ -11,7 +11,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "Organization",
+                name: "Business",
                 table: "Contacts",
                 type: "nvarchar(max)",
                 nullable: true,
@@ -23,7 +23,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "Organization",
+                name: "Business",
                 table: "Contacts",
                 type: "nvarchar(max)",
                 nullable: false,

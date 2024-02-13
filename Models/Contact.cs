@@ -15,9 +15,9 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         public string Email { get; set; }
 
         //uses regex to enforce consistency
-        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "The Phone field is invalid. Must be 10 digits")]
+        [RegularExpression(@"^\(\d{3}\) \d{3}-\d{4}$", ErrorMessage = "The Phone field is invalid. Must be 10 digits")]
         public string Phone { get; set; }
-        public string? Organization { get; set; }
+        public string? Business { get; set; }
         public int CategoryId {  get; set; }
         public Category? Category { get; set; }
         public string Slug =>

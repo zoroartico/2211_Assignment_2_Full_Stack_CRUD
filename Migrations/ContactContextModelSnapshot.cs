@@ -83,6 +83,9 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"));
 
+                    b.Property<string>("Business")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -96,9 +99,6 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Organization")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
@@ -115,31 +115,31 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                         new
                         {
                             ContactId = 1,
+                            Business = "Test Business",
                             CategoryId = 1,
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
                             Phone = "1231231233"
                         },
                         new
                         {
                             ContactId = 2,
+                            Business = "Test Business",
                             CategoryId = 2,
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
                             Phone = "2342342344"
                         },
                         new
                         {
                             ContactId = 3,
+                            Business = "Test Business",
                             CategoryId = 3,
                             Email = "Test Email",
                             FirstName = "Test FirstName",
                             LastName = "Test LastName",
-                            Organization = "Test Organization",
                             Phone = "3453453455"
                         });
                 });

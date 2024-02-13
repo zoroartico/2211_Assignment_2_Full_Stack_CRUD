@@ -33,16 +33,20 @@
     </div>
     <div class="form-group">
         <label asp-for="Phone">Phone</label>
-        <input asp-for="Phone" class="form-control">
+        <input id="phoneInput" asp-for="Phone" class="form-control">
     </div>
     <div class="form-group">
-        <label asp-for="Organization">Organization</label>
-        <input asp-for="Organization" class="form-control">
+        <label asp-for="Business">Organization</label>
+        <input asp-for="Business" class="form-control">
     </div>
     <input type="hidden" asp-for="ContactId" />
     <button type="submit" class="btn btn-success">
         @ViewBag.Action
     </button>
-    <a asp-controller="Home" asp-action="Index"
+    <a asp-controller="@((ViewBag.Action == "Edit") ? "Contact" : "Home")"
+       asp-action="@((ViewBag.Action == "Edit") ? "Details" : "Index")"
+       asp-route-id="@((ViewBag.Action == "Edit") ? Model.ContactId : null)"
+       asp-route-slug="@((ViewBag.Action == "Edit") ? Model.Slug: null )"
        class="btn btn-danger">Cancel</a>
 </form>
+<script src="~/js/site.js"></script>

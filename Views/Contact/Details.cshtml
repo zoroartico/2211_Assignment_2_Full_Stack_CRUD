@@ -15,19 +15,21 @@
             //Excluding properties that contain "Id" or "Slug"
             if (!propertyName.Contains("Id") && !propertyName.Contains("Slug"))
             {
+                //for display, checks for Pascal case to display in normal reading format
+                var displayName = Regex.Replace(propertyName, @"(\p{Lu})", " $1").TrimStart();
                 //Due to time constraint, less elegant solution to inproper display of categoryName
                 if(propertyName == "Category"){
                     <dt class="col-sm-2 border">
-                        @Html.DisplayName(propertyName)
+                        @Html.DisplayName(displayName)
                     </dt>
                     <dd class="col-sm-10 border-top">
                         @Html.DisplayFor(model => model.Category.CategoryName)
                     </dd>
                 } else {
                     <dt class="col-sm-2 border">
-                        @Html.DisplayName(propertyName)
+                        @Html.DisplayName(displayName)
                     </dt>
-                    <dd class = "col-sm-10 border-top">
+                    <dd class="col-sm-10 border-top">
                         @property.GetValue(Model)
                     </dd>
                 }

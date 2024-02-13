@@ -34,7 +34,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 LastName = "Test LastName",
                 Email = "Test Email",
                 Phone = "1231231233",
-                Organization = "Test Organization",
+                Business = "Test Business",
                 CategoryId = 1
             },
             new Contact
@@ -44,7 +44,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 LastName = "Test LastName",
                 Email = "Test Email",
                 Phone = "2342342344",
-                Organization = "Test Organization",
+                Business = "Test Business",
                 CategoryId = 2
             },
             new Contact
@@ -54,7 +54,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 LastName = "Test LastName",
                 Email = "Test Email",
                 Phone = "3453453455",
-                Organization = "Test Organization",
+                Business = "Test Business",
                 CategoryId = 3
             });
         }
