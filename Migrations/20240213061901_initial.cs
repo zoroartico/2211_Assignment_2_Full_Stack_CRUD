@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -36,7 +37,8 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Business = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    DateAdded = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,12 +67,12 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "Business", "CategoryId", "Email", "FirstName", "LastName", "Phone" },
+                columns: new[] { "ContactId", "Business", "CategoryId", "DateAdded", "Email", "FirstName", "LastName", "Phone" },
                 values: new object[,]
                 {
-                    { 1, "Red Deer Polytechnic", 1, "Kadendefrece@RDPolyTech.ca", "Kaden", "de Frece", "(111) 111-1111" },
-                    { 2, "Gamers", 1, "Ryan@GamerMail.com", "Ryan", "McGrandle", "(321) 456-7890" },
-                    { 3, "School", 7, "Guy@GuyMail.eu", "Ivan", "Guy", "(222) 222-2222" }
+                    { 1, "Red Deer Polytechnic", 1, new DateTime(2024, 2, 12, 23, 19, 1, 442, DateTimeKind.Local).AddTicks(3758), "Kadendefrece@RDPolyTech.ca", "Kaden", "de Frece", "(111) 111-1111" },
+                    { 2, "Gamers", 1, new DateTime(2024, 2, 12, 23, 19, 1, 442, DateTimeKind.Local).AddTicks(3800), "Ryan@GamerMail.com", "Ryan", "McGrandle", "(321) 456-7890" },
+                    { 3, "School", 7, new DateTime(2024, 2, 12, 23, 19, 1, 442, DateTimeKind.Local).AddTicks(3802), "Guy@GuyMail.eu", "Ivan", "Guy", "(222) 222-2222" }
                 });
 
             migrationBuilder.CreateIndex(

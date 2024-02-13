@@ -6,6 +6,9 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
 {
     public class Contact
     {
+        //autosets DateAdded
+        public Contact(){DateAdded = DateTime.Now;}
+
         public int ContactId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -20,8 +23,10 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         public string? Business { get; set; }
         public int CategoryId {  get; set; }
         public Category? Category { get; set; }
+        public DateTime DateAdded { get; set; }
         public string Slug =>
             FirstName?.Replace(' ', '-').ToLower() + '-' +
             LastName?.ToString();
     }
+    
 }
