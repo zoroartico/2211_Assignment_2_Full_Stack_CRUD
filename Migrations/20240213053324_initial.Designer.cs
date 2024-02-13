@@ -11,8 +11,8 @@ using _2211_Assignment_2_Full_Stack_CRUD.Models;
 namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 {
     [DbContext(typeof(ContactContext))]
-    [Migration("20240213043604_AlterOrganizationToBusinessColumnName")]
-    partial class AlterOrganizationToBusinessColumnName
+    [Migration("20240213053324_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                         new
                         {
                             CategoryId = 4,
-                            CategoryName = "Subordinate"
+                            CategoryName = "Employee"
                         },
                         new
                         {
@@ -118,32 +118,32 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                         new
                         {
                             ContactId = 1,
-                            Business = "Test Business",
+                            Business = "Red Deer Polytechnic",
                             CategoryId = 1,
-                            Email = "Test Email",
-                            FirstName = "Test FirstName",
-                            LastName = "Test LastName",
-                            Phone = "1231231233"
+                            Email = "Kadendefrece@RDPolyTech.ca",
+                            FirstName = "Kaden",
+                            LastName = "de Frece",
+                            Phone = "(111) 111-1111"
                         },
                         new
                         {
                             ContactId = 2,
-                            Business = "Test Business",
-                            CategoryId = 2,
-                            Email = "Test Email",
-                            FirstName = "Test FirstName",
-                            LastName = "Test LastName",
-                            Phone = "2342342344"
+                            Business = "Gamers",
+                            CategoryId = 1,
+                            Email = "Ryan@GamerMail.com",
+                            FirstName = "Ryan",
+                            LastName = "McGrandle",
+                            Phone = "(321) 456-7890"
                         },
                         new
                         {
                             ContactId = 3,
-                            Business = "Test Business",
-                            CategoryId = 3,
-                            Email = "Test Email",
-                            FirstName = "Test FirstName",
-                            LastName = "Test LastName",
-                            Phone = "3453453455"
+                            Business = "School",
+                            CategoryId = 7,
+                            Email = "Guy@GuyMail.eu",
+                            FirstName = "Ivan",
+                            LastName = "Guy",
+                            Phone = "(222) 222-2222"
                         });
                 });
 

@@ -35,7 +35,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Organization = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Business = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -57,7 +57,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
                     { 1, "Friend" },
                     { 2, "Boss" },
                     { 3, "Co-Worker" },
-                    { 4, "Subordinate" },
+                    { 4, "Employee" },
                     { 5, "Family" },
                     { 6, "Acquaintance" },
                     { 7, "Enemy" }
@@ -65,12 +65,12 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Migrations
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "CategoryId", "Email", "FirstName", "LastName", "Business", "Phone" },
+                columns: new[] { "ContactId", "Business", "CategoryId", "Email", "FirstName", "LastName", "Phone" },
                 values: new object[,]
                 {
-                    { 1, 1, "Test Email", "Test FirstName", "Test LastName", "Test Business", "1231231233" },
-                    { 2, 2, "Test Email", "Test FirstName", "Test LastName", "Test Business", "2342342344" },
-                    { 3, 3, "Test Email", "Test FirstName", "Test LastName", "Test Business", "3453453455" }
+                    { 1, "Red Deer Polytechnic", 1, "Kadendefrece@RDPolyTech.ca", "Kaden", "de Frece", "(111) 111-1111" },
+                    { 2, "Gamers", 1, "Ryan@GamerMail.com", "Ryan", "McGrandle", "(321) 456-7890" },
+                    { 3, "School", 7, "Guy@GuyMail.eu", "Ivan", "Guy", "(222) 222-2222" }
                 });
 
             migrationBuilder.CreateIndex(
