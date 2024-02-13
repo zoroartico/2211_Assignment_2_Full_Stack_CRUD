@@ -11,6 +11,10 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Controllers
         {
             context = ctx;
         }
+        public IActionResult About()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             var contacts =
