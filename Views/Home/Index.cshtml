@@ -19,7 +19,8 @@
             {
                 <tr>
                     <td>
-                        <a asp-controller="Contact" asp-action="Details"
+                        <a class="nav-link"
+                           asp-controller="Contact" asp-action="Details"
                            asp-route-id="@contact.ContactId"
                            asp-route-slug="@contact.Slug.Replace(" ","-")">
                            @contact.FirstName @contact.LastName
