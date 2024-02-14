@@ -22,7 +22,9 @@
     <div class="form-group">
         <label asp-for="CategoryId">Category</label>
         <select asp-for="CategoryId" class="form-control">
-            <option value="">select a Category</option>
+            
+            <!--retrieves categories and creates dropdown list items from categories-->
+            <option value="">select a Category</option> 
             @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">
@@ -45,9 +47,10 @@
     </div>
 
     <!--Submit, cancel and home buttons-->
+
     <input type="hidden" asp-for="ContactId" />
 
-    <!--Dynamically changes from add to edit based on asp-action-->
+    <!--Dynamically changes button text from add to edit based on asp-action, submits information to db-->
     <button type="submit" class="btn btn-success">
         @ViewBag.Action
     </button>
