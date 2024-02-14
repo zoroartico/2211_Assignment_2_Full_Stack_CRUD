@@ -5,6 +5,7 @@ namespace ContactList.Controllers
 {
     public class ContactController : Controller
     {
+        //loading database data into the controller
         private ContactContext context { get; set; }
         public ContactController(ContactContext ctx)
         {
@@ -12,7 +13,11 @@ namespace ContactList.Controllers
         }
 
         //Simple GET and POST Action Methods for all Contact Views
-        //Brings Categories as ordered list for dropdown selection on Create & Update Operations
+
+        //Brings Categories as ordered list for dropdown selection
+        //on Create & Update Operations
+
+        //Returns Contact/Edit View with "Add" action 
         [HttpGet]
         public IActionResult Add() 
         {
@@ -24,6 +29,7 @@ namespace ContactList.Controllers
                 .ToList();
             return View("Edit", new Contact());
         }
+        //Returning Contact/Details View
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -36,6 +42,7 @@ namespace ContactList.Controllers
             var contact = context.Contacts.Find(id);
             return View(contact);
         }
+        //Returns Contact/Edit View
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -48,6 +55,7 @@ namespace ContactList.Controllers
             var contact = context.Contacts.Find(id);
             return View(contact);
         }
+        //Sends edit/add information depending on Id passed
         [HttpPost]
         public IActionResult Edit(Contact contact)
         {
@@ -72,12 +80,14 @@ namespace ContactList.Controllers
                 return View(contact);
             }
         }
+        //Returns Contact/Delete view
         [HttpGet]
         public IActionResult Delete(int id)
         {
             var contact = context.Contacts.Find(id);
             return View(contact);
         }
+        //Sends Delete information
         [HttpPost]
         public IActionResult Delete(Contact contact)
         {

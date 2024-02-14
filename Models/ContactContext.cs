@@ -2,7 +2,7 @@
 
 namespace _2211_Assignment_2_Full_Stack_CRUD.Models
 {
-    //Pre-defining data for DB, utilizes NuGet for easy DB Creation and population
+    //Pre-defining data for DB
     public class ContactContext : DbContext
     {
         public ContactContext(DbContextOptions<ContactContext> options)
@@ -66,3 +66,4 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         }
     }
 }
+

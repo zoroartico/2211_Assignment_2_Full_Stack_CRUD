@@ -11,6 +11,7 @@
 </head>
 <body>
     <header>
+        <!--Creates Navbar in Header-->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">_2211_Assignment_2_Full_Stack_CRUD</a>
@@ -37,21 +38,23 @@
                 </div>
             </div>
         </div>
-
-
-
     </header>
+
+    <!--Stores HTML Body in Stylized Container-->
     <div class="container" style="background-color:#a7d9c2; border-radius: 25px;">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!--Contains Footer Information and Link-->
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - _2211_Assignment_2_Full_Stack_CRUD - <a asp-area="" asp-controller="Home" asp-action="About">About</a>
         </div>
     </footer>
+
+    <!--Loading JS at end of Body-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

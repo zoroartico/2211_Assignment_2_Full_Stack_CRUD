@@ -6,6 +6,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Controllers
 {
     public class HomeController : Controller
     {
+        //loading data from db
         private ContactContext context { get; set; }
         public HomeController(ContactContext ctx)
         {
