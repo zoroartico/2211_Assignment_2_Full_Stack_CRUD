@@ -1,7 +1,7 @@
 ﻿@model Contact
-@{
-    string fname = ViewBag.Action + " Contact";
-    ViewBag.FirstName = fname;
+@{ //Changes title of page if "Add" or "Edit"
+    string title = ViewBag.Action + " Contact";
+    ViewBag.Title = title;
 }
 <!--Multi-Functional View to eliminate code duplication and redundancy-->
 <!--Acts Create(Add) and Update(Edit) Views through dynamic use of Viewbag property values-->
