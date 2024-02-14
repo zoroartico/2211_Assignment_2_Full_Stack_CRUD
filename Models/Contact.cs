@@ -4,11 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace _2211_Assignment_2_Full_Stack_CRUD.Models
 {
+    //primary class of this application, creates Contact objects
     public class Contact
     {
-        //autosets DateAdded
+        //autosets DateAdded using constructor
         public Contact(){DateAdded = DateTime.Now;}
 
+        //Basic Contact Object containing key elements of a Contact
         public int ContactId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,9 +23,15 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
         [RegularExpression(@"^\(\d{3}\) \d{3}-\d{4}$", ErrorMessage = "The Phone field is invalid. Must be 10 digits")]
         public string Phone { get; set; }
         public string? Business { get; set; }
+        
+        //Category Fk
         public int CategoryId {  get; set; }
         public Category? Category { get; set; }
+
+        //Automatic set by constructor
         public DateTime DateAdded { get; set; }
+
+        //Slug for url readability, replaces whitespace with hyphens for standard url convention
         public string Slug =>
             FirstName?.Replace(' ', '-').ToLower() + '-' +
             LastName?.ToString();

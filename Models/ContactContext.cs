@@ -2,20 +2,25 @@
 
 namespace _2211_Assignment_2_Full_Stack_CRUD.Models
 {
+    //Pre-defining data for DB, utilizes NuGet for easy DB Creation and population
     public class ContactContext : DbContext
     {
         public ContactContext(DbContextOptions<ContactContext> options)
             : base(options)
         { }
 
+        //Table declaration
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        //Data Population
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+
+            //Populates Category Table
             modelBuilder.Entity<Category>().HasData(
                 new Category { CategoryId = 1, CategoryName = "Friend" },
                 new Category { CategoryId = 2, CategoryName = "Boss" },
@@ -26,6 +31,7 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Models
                 new Category { CategoryId = 7, CategoryName = "Enemy" }
             );
 
+            //Populates Contacts Table
             modelBuilder.Entity<Contact>().HasData(
             new Contact
             {

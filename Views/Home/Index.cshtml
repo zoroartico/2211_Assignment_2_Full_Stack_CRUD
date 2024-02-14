@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "My Contacts";
 }
+<!--Simple home page with loaded contact list from db-->
+
 <h2>Contact List</h2>
 <table class="table table-bordered table-striped">
     <thead>
@@ -13,12 +15,14 @@
         </tr>
     </thead>
     <tbody>
+        <!--Loads each ContactList item into a row-->
         @foreach (var contact in Model)
         {
             if (contact != null)
             {
                 <tr>
                     <td>
+                        <!--Creates route to details page when name is selected by user-->
                         <a class="nav-link"
                            asp-controller="Contact" asp-action="Details"
                            asp-route-id="@contact.ContactId"

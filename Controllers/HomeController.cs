@@ -11,10 +11,16 @@ namespace _2211_Assignment_2_Full_Stack_CRUD.Controllers
         {
             context = ctx;
         }
+
+        //Home Action Methods
+
+        //returns About View
         public IActionResult About()
         {
             return View();
         }
+
+        //Default path index action method returning list of all contacts
         public IActionResult Index()
         {
             var contacts =

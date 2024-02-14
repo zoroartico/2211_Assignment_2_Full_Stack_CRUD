@@ -3,11 +3,15 @@
     string fname = ViewBag.Action + " Contact";
     ViewBag.FirstName = fname;
 }
+<!--Multi-Functional View to eliminate code duplication and redundancy-->
+<!--Acts Create(Add) and Update(Edit) Views through dynamic use of Viewbag property values-->
+
 <h2>@ViewBag.Title</h2>
 <form asp-action="Edit" method="post">
     <div asp-validation-summary="All"
          class="text-danger">
     </div>
+    <!-- Sets input fields and labels for all attributes-->
     <div class="form-group">
         <label asp-for="FirstName">First Name</label>
         <input asp-for="FirstName" class="form-control">
@@ -39,14 +43,21 @@
         <label asp-for="Business">Organization</label>
         <input asp-for="Business" class="form-control">
     </div>
+
+    <!--Submit, cancel and home buttons-->
     <input type="hidden" asp-for="ContactId" />
+
+    <!--Dynamically changes from add to edit based on asp-action-->
     <button type="submit" class="btn btn-success">
         @ViewBag.Action
     </button>
+
+    <!--If on edit page, cancel will send you back to the details view, else sends back to index-->
     <a asp-controller="@((ViewBag.Action == "Edit") ? "Contact" : "Home")"
        asp-action="@((ViewBag.Action == "Edit") ? "Details" : "Index")"
        asp-route-id="@((ViewBag.Action == "Edit") ? Model.ContactId : null)"
        asp-route-slug="@((ViewBag.Action == "Edit") ? Model.Slug: null )"
        class="btn btn-danger">Cancel</a>
 </form>
+<!--loads js from wwwroot-->
 <script src="~/js/site.js"></script>

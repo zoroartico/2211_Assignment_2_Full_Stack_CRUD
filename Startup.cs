@@ -12,6 +12,7 @@ public class Startup
     {
         services.AddRouting(options =>
         {
+            //Sets lowercase urls for standard url convention
             options.LowercaseUrls = true;
             options.AppendTrailingSlash = true;
         });

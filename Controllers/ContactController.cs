@@ -10,8 +10,11 @@ namespace ContactList.Controllers
         {
             context = ctx;
         }
+
+        //Simple GET and POST Action Methods for all Contact Views
+        //Brings Categories as ordered list for dropdown selection on Create & Update Operations
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult Add() 
         {
             ViewBag.Action = "Add";
             ViewBag.Categories =
