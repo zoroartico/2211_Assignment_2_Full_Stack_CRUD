@@ -1,6 +1,13 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using _2211_Assignment_2_Full_Stack_CRUD.Models;
+/****************************************
+ * CPRO 2211 C# Web Apps Assignment 2   *
+ * Instructed By M. Raza                *
+ * Application Developed Using In-Class *
+ * Notes and Teachings as Reference     *
+ * By Kaden de Frece - 000364780        *
+ * **************************************/
 
 var builder = WebApplication.CreateBuilder(args);
 
