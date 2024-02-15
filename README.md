@@ -1,1 +1,1 @@
-# 2211_Assignment_2_Full_Stack_CRUD
+This application was created as a C# Web App Full Stack assignment using Razor By Kaden de Frece, instructed by M. Raza
