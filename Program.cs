@@ -21,6 +21,12 @@ builder.Services.AddDbContext<ContactContext>(options =>
         )
     );
 
+//Setting lowercase urls
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,11 +43,13 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
+    
     _ = endpoints.MapControllerRoute(
         name: "default",
         pattern:
             "{controller=Home}/{action=Index}/{id?}/{slug?}");
 });
+
 
 app.UseAuthorization();
 
